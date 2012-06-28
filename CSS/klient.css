@@ -1,0 +1,46 @@
+html, body {
+margin: 0;
+padding: 0;
+height: 100%; 
+}
+
+#output
+{
+	position: absolute;
+	top: 0%;
+	width: 69%;
+   height: 89%;
+}
+	
+#select 	
+{
+	position: absolute;
+	top: 0%;
+	left: 69%;
+	width: 10%;
+	height: 89%;
+}
+
+#input
+{
+	position: absolute;
+	top: 90%;
+	left: 0%;
+   width: 69%;
+}
+
+#send	
+{
+	position: absolute;
+	top: 90%;
+	left: 70%;
+}
+
+#conDecon
+{
+	position: absolute;
+	top: 0%;
+	left: 79%;
+   width: 19%;
+}
+

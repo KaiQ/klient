@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+		<link rel="stylesheet" type="text/css" href="CSS/klient.css">
+		<script type="text/javascript" src="JS/senden.js"></script>
+		<script type="text/javascript" src="JS/socket.js"></script>
+		<script type="text/javascript" src="JS/key.js"></script>
+		<script type="text/javascript" src="JS/onMessage.js"></script>
+	</head>
+	<body>
+   	<textarea id="output" readonly="readonly"></textarea>
+      <select id="select" multiple="multiple">
+      <div id="inputDiv">
+   		<input id="input" onKeyUp="keyEnter(event,send,['TXT', document.getElementById('input').value]);"/>
+	   	<button id="send" type="button" onClick="send('TXT', document.getElementById('input').value);">senden</button>
+      </div>
+      <div id="conDecon">
+         <table>
+            <tr>
+               <td>IP</td>
+               <td align="right"><input id="ip" size="8" maxlength="15" value="127.0.0.1"/></td>
+            </tr>
+            <tr>
+               <td>PORT</td>
+               <td align="right"><input id="port" size="4" maxlength="5" type="number" min="1" max="65535" value="12345"/></td>
+            </tr>
+            <tr>
+               <td>Name</td>
+               <td align="right"><input id="name" size="13" maxlength="20" value="Name" onKeyUp="keyEnter(event, send, ['USR', document.getElementById('name').value]);"/></td>
+               <td><button id="set" type="button" onclick="send('USR', document.getElementById('name').value);">set</button></td>
+            </tr>
+            <tr>
+               <td align="left"><button id="connect" type="button" onclick="socket();">connect</button></td>
+               <td align="right"><button id="disconnect" type="button" onclick="ws.close(4001,'clicked closed');">disconnect</button></td>
+            </tr>
+         </table>
+      </div>
+	</body>
+</html>
