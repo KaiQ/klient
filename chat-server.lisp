@@ -1,6 +1,7 @@
-
+; loading the clws websocket server implementation
 (ql:quickload "clws")
 
+; loading the clws.asdf packet from github repo ... optional
 ;(asdf:operate 'asdf:load-op 'clws)
 
 (defpackage #:chat
@@ -64,13 +65,14 @@
                                     (concatenate 'string 
                                        "TXT "
                                        (cdr (assoc client (clients res))) 
-                                       ": " 
+                                       " " 
                                        txt)))
          ; if mode = USR, check if name exists... 
          ; if exists 
          ;    write to client "already exists"
          ; else
          ;    write to all clients "USR <newName> <oldName>
+         ;    save new name in clients list
          ((string= "USR" mode) (cond 
                                   ((member txt (clients res) :key #'cdr :test #'string=)
                                        (write-to-client-text client "TXT This name already exists"))

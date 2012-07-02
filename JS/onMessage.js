@@ -7,8 +7,10 @@ function post(out, str)
 
 function onTXT(selec, out, field)
 {
+   var temp = field[1];
    field.shift();
-   post(out, field.join(' '));
+   field.shift();
+   post(out, temp + ": " + field.join(' '));
 };
 
 
@@ -27,7 +29,7 @@ function onUSR(selec, out, field)
    for(i=0; i<selec.length; i++)
       if (selec.options[i].text == field[2])
          selec.options[i].text = field[1];
-   post(out, "<" + field[2] + "> changed name to <" + field[1] + ">");
+   post(out, "\"" + field[2] + "\" changed name to \"" + field[1] + "\"");
 };
 
 
