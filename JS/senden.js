@@ -1,3 +1,4 @@
-function send(prefix,msg){
+function send(prefix,msg)
+{
    ws.send(prefix + " " + msg);
 };

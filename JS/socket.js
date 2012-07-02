@@ -17,7 +17,7 @@ function socket()
      
      ws.onerror = function(error) 
      {
-		  alert("fehler");
+		  post(document.getElementById('output'),"An error occurs. Possible reason: lost WebSocket connection");
 	  };
 
 
@@ -50,12 +50,11 @@ function socket()
 
      ws.onclose = function(evt)
      { 
-        if (typeof(ws) == "undefined")
-           return;
-        var i;
         while(document.getElementById('select').length > 0) 
             document.getElementById('select').remove(0);
+
         document.getElementById('output').value += '\ndisconnected';
+
         delete(ws);
      };
 
