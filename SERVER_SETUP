@@ -1,0 +1,10 @@
+instruction for server setup
+
+requirements:
+   - sbcl
+   - quicklisp
+
+to do:
+   1. install sbcl
+   2. install quicklisp
+   3. start server "sbcl --load chat-server.lisp"
